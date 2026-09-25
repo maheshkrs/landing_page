@@ -1,16 +1,17 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
   const lightbox = document.getElementById("galleryLightbox");
   const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxVideo = document.getElementById("lightboxVideo");
   const counter = document.getElementById("lightboxCounter");
 
   const closeBtn = lightbox.querySelector(".lightbox-close");
   const prevBtn = lightbox.querySelector(".lightbox-prev");
   const nextBtn = lightbox.querySelector(".lightbox-next");
 
-  let images = [];
+  let media = [];
   let currentIndex = 0;
+
 
   // Open gallery when button is clicked
   document.querySelectorAll(".gallery-btn").forEach(function (button) {
@@ -22,13 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!gallery) return;
 
-      images = Array.from(gallery.querySelectorAll("img"))
-        .map(img => ({
-          src: img.src,
-          alt: img.alt
-        }));
+      // Get both images and videos
+      media = Array.from(
+        gallery.querySelectorAll("img, video")
+      ).map(function (item) {
 
-      if (!images.length) return;
+        return {
+          type: item.tagName.toLowerCase(),
+          src: item.src,
+          alt: item.alt || ""
+        };
+
+      });
+
+      if (!media.length) return;
 
       currentIndex = 0;
 
@@ -36,39 +44,66 @@ document.addEventListener("DOMContentLoaded", function () {
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
 
-      showImage();
+      showMedia();
     });
 
   });
 
 
-  // Display current image
-  function showImage() {
+  // Display current image or video
+  function showMedia() {
 
-    lightboxImage.src = images[currentIndex].src;
-    lightboxImage.alt = images[currentIndex].alt;
+    const current = media[currentIndex];
+
+    if (current.type === "img") {
+
+      // Show image
+      lightboxImage.style.display = "block";
+      lightboxVideo.style.display = "none";
+
+      lightboxImage.src = current.src;
+      lightboxImage.alt = current.alt;
+
+      // Stop video
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute("src");
+      lightboxVideo.load();
+
+    } else if (current.type === "video") {
+
+      // Hide image
+      lightboxImage.style.display = "none";
+
+      // Show video
+      lightboxVideo.style.display = "block";
+      lightboxVideo.src = current.src;
+      lightboxVideo.load();
+
+    }
 
     counter.textContent =
-      (currentIndex + 1) + " / " + images.length;
+      (currentIndex + 1) + " / " + media.length;
   }
 
 
-  // Next image
+  // Next
   nextBtn.addEventListener("click", function () {
 
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
+    currentIndex =
+      (currentIndex + 1) % media.length;
+
+    showMedia();
 
   });
 
 
-  // Previous image
+  // Previous
   prevBtn.addEventListener("click", function () {
 
     currentIndex =
-      (currentIndex - 1 + images.length) % images.length;
+      (currentIndex - 1 + media.length) % media.length;
 
-    showImage();
+    showMedia();
 
   });
 
@@ -80,12 +115,18 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
+    // Stop video
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute("src");
+    lightboxVideo.load();
+
   }
+
 
   closeBtn.addEventListener("click", closeLightbox);
 
 
-  // Close when clicking outside image
+  // Close when clicking outside
   lightbox.addEventListener("click", function (e) {
 
     if (e.target === lightbox) {
@@ -100,18 +141,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!lightbox.classList.contains("active")) return;
 
-    if (e.key === "Escape") closeLightbox();
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
 
     if (e.key === "ArrowRight") {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage();
+
+      currentIndex =
+        (currentIndex + 1) % media.length;
+
+      showMedia();
+
     }
 
     if (e.key === "ArrowLeft") {
-      currentIndex =
-        (currentIndex - 1 + images.length) % images.length;
 
-      showImage();
+      currentIndex =
+        (currentIndex - 1 + media.length) % media.length;
+
+      showMedia();
+
     }
 
   });
