@@ -1,7 +1,7 @@
   @font-face {
     font-family:'Century Gothic';
-    src: url('./assets/fonts/CenturyGothic.woff2') format('woff2'),
-        url('./assets/fonts/CenturyGothic.woff') format('woff');
+    src: url('./assets/fonts/gothic/CenturyGothic.woff2') format('woff2'),
+        url('./assets/fonts/gothic/CenturyGothic.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
