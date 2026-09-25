@@ -1,3 +1,13 @@
+  @font-face {
+    font-family:'Century Gothic';
+    src: url('./assets/fonts/CenturyGothic.woff2') format('woff2'),
+        url('./assets/fonts/CenturyGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 :root{
     --bg:        #FAF8F3;
     --bg-panel:  #F1EEE5;
@@ -29,14 +39,6 @@
 
   .layout{ display:flex; min-height:100vh; }
 
-  @font-face {
-    font-family:'Century Gothic';
-    src: url('./assets/fonts/CenturyGothic.woff2') format('woff2'),
-        url('./assets/fonts/CenturyGothic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
 
 
