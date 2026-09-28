@@ -27,58 +27,144 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =========================================
        CASE STUDY TABS
     ========================================= */
+/* =========================================
+   CASE STUDY TABS
+========================================= */
 
-    const tabs = document.querySelectorAll(".case-tab");
-
-    const cards = document.querySelectorAll(".case-card");
-
-
-    tabs.forEach(function (tab) {
-
-        tab.addEventListener("click", function () {
-
-            /* Remove active from all tabs */
-
-            tabs.forEach(function (item) {
-                item.classList.remove("active");
-            });
+const tabs = document.querySelectorAll(".case-tab");
+const cards = document.querySelectorAll(".case-card");
 
 
-            /* Add active to clicked tab */
+function filterCaseStudies(filter, shouldScroll = false) {
 
-            tab.classList.add("active");
+    /* Remove active from all tabs */
 
-
-            /* Get selected category */
-
-            const filter = tab.getAttribute("data-filter");
-
-
-            /* Filter cards */
-
-            cards.forEach(function (card) {
-
-                const category = card.getAttribute("data-category");
+    tabs.forEach(function (item) {
+        item.classList.remove("active");
+    });
 
 
-                if (
-                    filter === "all" ||
-                    category === filter
-                ) {
+    /* Add active to selected tab */
 
-                    card.style.display = "";
+    const activeTab = document.querySelector(
+        '.case-tab[data-filter="' + filter + '"]'
+    );
 
-                } else {
+    if (activeTab) {
+        activeTab.classList.add("active");
+    }
 
-                    card.style.display = "none";
 
-                }
+    /* Filter cards */
 
-            });
+    cards.forEach(function (card) {
 
-        });
+        const category = card.getAttribute("data-category");
+
+        if (
+            filter === "all" ||
+            category === filter
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
 
     });
+
+
+    /* Scroll selected tab into view */
+
+    if (shouldScroll && activeTab) {
+
+        setTimeout(function () {
+
+            activeTab.scrollIntoView({
+                behavior: "smooth",
+                inline: "center",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+}
+
+
+/* Normal tab click */
+
+tabs.forEach(function (tab) {
+
+    tab.addEventListener("click", function () {
+
+        const filter =
+            tab.getAttribute("data-filter");
+
+        filterCaseStudies(filter, false);
+
+    });
+
+});
+
+
+/* =========================================
+   OPEN CASE STUDIES PAGE WITH SELECTED TAB
+========================================= */
+
+const viewAllBtn =
+    document.querySelector(".view-all-btn");
+
+if (viewAllBtn) {
+
+    viewAllBtn.addEventListener("click", function (event) {
+
+        const activeTab =
+            document.querySelector(".case-tab.active");
+
+        if (!activeTab) {
+            return;
+        }
+
+        const filter =
+            activeTab.getAttribute("data-filter");
+
+
+        if (filter && filter !== "all") {
+
+            event.preventDefault();
+
+            window.location.href =
+                "case-studies.html?category=" +
+                encodeURIComponent(filter);
+
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   READ CATEGORY FROM URL
+========================================= */
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const categoryFromUrl =
+    params.get("category");
+
+
+if (categoryFromUrl) {
+
+    filterCaseStudies(categoryFromUrl, true);
+
+}
 
 
     /* =========================================
