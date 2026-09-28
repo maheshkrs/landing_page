@@ -1,0 +1,833 @@
+/* =========================================
+   ROOT / PAGE
+========================================= */
+
+:root {
+    --bg: #FAF8F3;
+    --bg-panel: #F1EEE5;
+    --sidebar: #454545;
+    --sidebar-t: #A9A69B;
+    --ink: #1B1B18;
+    --ink-muted: #7A7669;
+    --line: #E1DDD0;
+    --gold: #003BC0;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background: var(--bg);
+    color: var(--ink);
+
+    font-family: var(--font-body);
+
+    overflow-x: hidden;
+}
+
+
+img,
+video {
+    max-width: 100%;
+}
+
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.case-site-header {
+    width: 100%;
+
+    padding: 24px 0;
+
+    background: #fff;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.case-header-inner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.case-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+}
+
+
+.case-logo img {
+    display: block;
+
+    width: auto;
+    height: 45px;
+}
+
+
+.back-home-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.case-hero {
+    width: 100%;
+
+    padding: 30px 0 30px;
+
+    background: var(--bg);
+}
+
+
+.case-hero-content {
+    max-width: 900px;
+}
+
+
+.case-eyebrow {
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-family: var(--font-mono);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+}
+
+
+.case-hero h1 {
+    margin: 0 0 15px;
+
+    color: var(--ink);
+
+    font-family: var(--font-display);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+.case-hero p {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: var(--ink-muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CASE STUDIES SECTION
+========================================= */
+
+.case-studies-section {
+    width: 100%;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================================
+   CATEGORY TABS
+========================================= */
+
+.case-study-tabs {
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 0 5px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+}
+
+
+.case-study-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================
+   TAB
+========================================= */
+
+.case-tab {
+    position: relative;
+
+    flex: 0 0 auto;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--gold);
+
+    padding: 8px 0 14px;
+
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   ACTIVE TAB
+========================================= */
+
+.case-tab::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+.case-tab.active {
+    color: var(--gold);
+
+}
+
+
+.case-tab.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   CASE STUDY GRID
+========================================= */
+
+.case-study-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 32px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   CASE CARD
+========================================= */
+
+.case-card {
+    position: relative;
+
+    background: #fff;
+
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.case-card-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: var(--bg-panel);
+}
+
+
+.case-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.case-card-content {
+    padding: 24px;
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.case-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-family: var(--font-mono);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .04em;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.case-card h2 {
+    margin: 0 0 12px;
+
+    color: var(--ink);
+
+    font-family: var(--font-display);
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================
+   CARD DESCRIPTION
+========================================= */
+
+.case-card p {
+    margin: 0;
+
+    color: var(--ink-muted);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   REMOVE CARD BUTTON
+========================================= */
+
+.case-study-open {
+    display: none;
+}
+
+
+/* =========================================
+   HIDDEN PROJECT SOURCE
+========================================= */
+
+.project-source {
+    display: none;
+}
+
+
+/* =========================================
+   PROJECT MODAL
+========================================= */
+
+.project-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.80);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   OPEN MODAL
+========================================= */
+
+.project-modal.show {
+    display: block;
+}
+
+
+/* =========================================
+   WHITE SCROLLABLE AREA
+========================================= */
+
+.project-modal-dialog {
+    position: absolute;
+
+    top: 55px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - 55px);
+
+    margin: 0;
+
+    background: #fff;
+
+    border: 0;
+
+    border-radius: 16px 16px 0 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   FIXED IN BLACK AREA
+========================================= */
+
+.project-modal-close {
+    position: fixed;
+
+    top: 10px;
+    right: 18px;
+
+    z-index: 10000;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MODAL BODY
+========================================= */
+
+.project-modal-body {
+    width: 100%;
+
+    padding: 80px 7vw 80px;
+}
+
+
+/* =========================================
+   MODAL CATEGORY
+========================================= */
+
+.project-modal-category {
+    margin-bottom: 14px;
+
+    color: var(--gold);
+
+    font-family: var(--font-mono);
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================
+   MODAL TITLE
+========================================= */
+
+.project-modal-body h2 {
+    margin: 0 0 25px;
+
+    color: var(--ink);
+
+    font-family: var(--font-display);
+
+    font-size: clamp(40px, 5vw, 70px);
+
+    line-height: 1.05;
+}
+
+
+/* =========================================
+   MODAL DESCRIPTION
+========================================= */
+
+.project-modal-description {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin-bottom: 50px;
+
+    color: var(--ink-muted);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.project-modal-description p {
+    margin: 0;
+}
+
+
+/* =========================================
+   MODAL MEDIA
+   ONE ITEM PER ROW
+========================================= */
+
+.project-modal-media {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   MODAL IMAGES
+========================================= */
+
+.project-modal-media img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: var(--bg-panel);
+}
+
+
+/* =========================================
+   MODAL VIDEO
+========================================= */
+
+.project-modal-media video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: #003bc0;
+}
+
+.project-modal-media{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+    width:100%;
+    height:500px;
+}
+.project-modal-media img,
+.project-modal-media video{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+/* =========================================
+   RESPONSIVE - 767px AND BELOW
+========================================= */
+
+@media (max-width: 767px) {
+
+    /* HEADER */
+
+    .case-site-header {
+        padding: 18px 0;
+    }
+
+    .case-header-inner {
+        gap: 15px;
+    }
+
+    .case-logo img {
+        height: 38px;
+    }
+
+    .back-home-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .case-hero {
+        padding: 65px 0 55px;
+    }
+
+    .case-eyebrow {
+        font-size: 11px;
+        margin-bottom: 14px;
+    }
+
+    .case-hero h1 {
+        font-size: 48px;
+        line-height: 1.05;
+        margin-bottom: 20px;
+    }
+
+    .case-hero p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+
+    /* TABS */
+
+    .case-study-tabs {
+        gap: 25px;
+        margin-bottom: 30px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .case-tab {
+        font-size: 16px;
+        padding-bottom: 11px;
+    }
+
+
+    /* GRID */
+
+    .case-study-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+
+    /* CARD */
+
+    .case-card-content {
+        padding: 20px;
+    }
+
+    .case-card h2 {
+        font-size: 22px;
+    }
+
+    .case-card p {
+        font-size: 14px;
+    }
+
+
+    /* MODAL */
+
+    .project-modal {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        background: rgba(0, 0, 0, 0.80);
+        overflow: hidden;
+    }
+
+    .project-modal-dialog {
+        top: 50px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100vh - 50px);
+
+        margin: 0;
+
+        border-radius: 12px 12px 0 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* CLOSE BUTTON */
+
+    .project-modal-close {
+        position: fixed;
+
+        top: 6px;
+        right: 10px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 30px;
+    }
+
+
+    /* MODAL BODY */
+
+    .project-modal-body {
+        width: 100%;
+        padding: 65px 20px 45px;
+    }
+
+    .project-modal-category {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .project-modal-body h2 {
+        font-size: 28px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .project-modal-description {
+        font-size: 15px;
+        line-height: 1.65;
+        margin-bottom: 30px;
+    }
+
+    .project-modal-media {
+        gap: 18px;
+    }
+
+    .project-modal-media img,
+    .project-modal-media video {
+        width: 100%;
+    }
+}

@@ -1,168 +1,337 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const lightbox = document.getElementById("galleryLightbox");
-  const lightboxImage = document.getElementById("lightboxImage");
-  const lightboxVideo = document.getElementById("lightboxVideo");
-  const counter = document.getElementById("lightboxCounter");
+    /* =========================================
+       NAVBAR SCROLL
+    ========================================= */
 
-  const closeBtn = lightbox.querySelector(".lightbox-close");
-  const prevBtn = lightbox.querySelector(".lightbox-prev");
-  const nextBtn = lightbox.querySelector(".lightbox-next");
+    const navbar = document.querySelector(".site-navbar");
 
-  let media = [];
-  let currentIndex = 0;
+    if (navbar) {
+
+        function updateNavbar() {
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("navbar-scrolled");
+            } else {
+                navbar.classList.remove("navbar-scrolled");
+            }
+
+        }
+
+        updateNavbar();
+
+        window.addEventListener("scroll", updateNavbar);
+    }
 
 
-  // Open gallery when button is clicked
-  document.querySelectorAll(".gallery-btn").forEach(function (button) {
+    /* =========================================
+       CASE STUDY TABS
+    ========================================= */
 
-    button.addEventListener("click", function () {
+    const tabs = document.querySelectorAll(".case-tab");
 
-      const galleryId = button.dataset.gallery;
-      const gallery = document.getElementById(galleryId);
+    const cards = document.querySelectorAll(".case-card");
 
-      if (!gallery) return;
 
-      // Get both images and videos
-      media = Array.from(
-        gallery.querySelectorAll("img, video")
-      ).map(function (item) {
+    tabs.forEach(function (tab) {
 
-        return {
-          type: item.tagName.toLowerCase(),
-          src: item.src,
-          alt: item.alt || ""
-        };
+        tab.addEventListener("click", function () {
 
-      });
+            /* Remove active from all tabs */
 
-      if (!media.length) return;
+            tabs.forEach(function (item) {
+                item.classList.remove("active");
+            });
 
-      currentIndex = 0;
 
-      lightbox.classList.add("active");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+            /* Add active to clicked tab */
 
-      showMedia();
+            tab.classList.add("active");
+
+
+            /* Get selected category */
+
+            const filter = tab.getAttribute("data-filter");
+
+
+            /* Filter cards */
+
+            cards.forEach(function (card) {
+
+                const category = card.getAttribute("data-category");
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
     });
 
-  });
+
+    /* =========================================
+       MODAL ELEMENTS
+    ========================================= */
+
+    const modal = document.getElementById("projectModal");
+
+    const modalClose = document.getElementById("projectModalClose");
+
+    const modalCategory = document.getElementById("modalCategory");
+
+    const modalTitle = document.getElementById("modalTitle");
+
+    const modalDescription = document.getElementById("modalDescription");
+
+    const modalMedia = document.getElementById("modalMedia");
 
 
-  // Display current image or video
-  function showMedia() {
+    /* =========================================
+       CHECK MODAL
+    ========================================= */
 
-    const current = media[currentIndex];
+    if (!modal) {
 
-    if (current.type === "img") {
+        console.error(
+            "Modal error: #projectModal was not found."
+        );
 
-      // Show image
-      lightboxImage.style.display = "block";
-      lightboxVideo.style.display = "none";
+        return;
+    }
 
-      lightboxImage.src = current.src;
-      lightboxImage.alt = current.alt;
 
-      // Stop video
-      lightboxVideo.pause();
-      lightboxVideo.removeAttribute("src");
-      lightboxVideo.load();
+    /* =========================================
+       OPEN MODAL
+       CLICK ANYWHERE ON CARD
+    ========================================= */
 
-    } else if (current.type === "video") {
+    cards.forEach(function (card) {
 
-      // Hide image
-      lightboxImage.style.display = "none";
+        card.addEventListener("click", function () {
 
-      // Show video
-      lightboxVideo.style.display = "block";
-      lightboxVideo.src = current.src;
-      lightboxVideo.load();
+            /* Find hidden project source */
+
+            const source =
+                card.querySelector(".project-source");
+
+
+            if (!source) {
+
+                console.error(
+                    "Modal error: .project-source was not found inside this card.",
+                    card
+                );
+
+                return;
+            }
+
+
+            /* =====================================
+               CATEGORY
+            ===================================== */
+
+            const category =
+                source.querySelector(".project-category");
+
+
+            if (category && modalCategory) {
+
+                modalCategory.innerHTML =
+                    category.innerHTML;
+
+            }
+
+
+            /* =====================================
+               TITLE
+            ===================================== */
+
+            const title =
+                source.querySelector("h2");
+
+
+            if (title && modalTitle) {
+
+                modalTitle.innerHTML =
+                    title.innerHTML;
+
+            }
+
+
+            /* =====================================
+               DESCRIPTION
+            ===================================== */
+
+            const description =
+                source.querySelector(".project-description");
+
+
+            if (description && modalDescription) {
+
+                modalDescription.innerHTML =
+                    description.innerHTML;
+
+            }
+
+
+            /* =====================================
+               MEDIA
+            ===================================== */
+
+            const media =
+                source.querySelector(".project-media");
+
+
+            if (media && modalMedia) {
+
+                modalMedia.innerHTML =
+                    media.innerHTML;
+
+            }
+
+
+            /* =====================================
+               SHOW MODAL
+            ===================================== */
+
+            modal.classList.add("show");
+
+            document.body.classList.add("modal-open");
+
+
+            /* Start modal at top */
+
+            modal.scrollTop = 0;
+
+            window.scrollTo(0, 0);
+
+        });
+
+    });
+
+
+    /* =========================================
+       CLOSE MODAL FUNCTION
+    ========================================= */
+
+    function closeProjectModal() {
+
+        modal.classList.remove("show");
+
+        document.body.classList.remove("modal-open");
+
+
+        /* Stop videos */
+
+        if (modalMedia) {
+
+            const videos =
+                modalMedia.querySelectorAll("video");
+
+
+            videos.forEach(function (video) {
+
+                video.pause();
+
+                video.currentTime = 0;
+
+            });
+
+
+            /* Clear media */
+
+            modalMedia.innerHTML = "";
+
+        }
+
+
+        /* Clear content */
+
+        if (modalCategory) {
+            modalCategory.innerHTML = "";
+        }
+
+        if (modalTitle) {
+            modalTitle.innerHTML = "";
+        }
+
+        if (modalDescription) {
+            modalDescription.innerHTML = "";
+        }
 
     }
 
-    counter.textContent =
-      (currentIndex + 1) + " / " + media.length;
-  }
 
+    /* =========================================
+       CLOSE BUTTON
+    ========================================= */
 
-  // Next
-  nextBtn.addEventListener("click", function () {
+    if (modalClose) {
 
-    currentIndex =
-      (currentIndex + 1) % media.length;
+        modalClose.addEventListener(
+            "click",
+            function (event) {
 
-    showMedia();
+                event.preventDefault();
 
-  });
+                event.stopPropagation();
 
+                closeProjectModal();
 
-  // Previous
-  prevBtn.addEventListener("click", function () {
-
-    currentIndex =
-      (currentIndex - 1 + media.length) % media.length;
-
-    showMedia();
-
-  });
-
-
-  // Close lightbox
-  function closeLightbox() {
-
-    lightbox.classList.remove("active");
-    lightbox.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-
-    // Stop video
-    lightboxVideo.pause();
-    lightboxVideo.removeAttribute("src");
-    lightboxVideo.load();
-
-  }
-
-
-  closeBtn.addEventListener("click", closeLightbox);
-
-
-  // Close when clicking outside
-  lightbox.addEventListener("click", function (e) {
-
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-
-  });
-
-
-  // Keyboard navigation
-  document.addEventListener("keydown", function (e) {
-
-    if (!lightbox.classList.contains("active")) return;
-
-    if (e.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (e.key === "ArrowRight") {
-
-      currentIndex =
-        (currentIndex + 1) % media.length;
-
-      showMedia();
+            }
+        );
 
     }
 
-    if (e.key === "ArrowLeft") {
 
-      currentIndex =
-        (currentIndex - 1 + media.length) % media.length;
+    /* =========================================
+       CLICK OUTSIDE MODAL
+    ========================================= */
+if (modalClose) {
+    modalClose.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        closeProjectModal();
+    });
+}
 
-      showMedia();
-
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("show")) {
+        closeProjectModal();
     }
+});
 
-  });
+
+    /* =========================================
+       ESC KEY
+    ========================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("show")
+            ) {
+
+                closeProjectModal();
+
+            }
+
+        }
+    );
 
 });
