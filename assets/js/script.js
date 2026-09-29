@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
     /* =========================================
        NAVBAR SCROLL
     ========================================= */
@@ -21,181 +22,132 @@ document.addEventListener("DOMContentLoaded", function () {
         updateNavbar();
 
         window.addEventListener("scroll", updateNavbar);
+
     }
 
 
     /* =========================================
-       CASE STUDY TABS
+       CASE STUDY CARDS
+       Bootstrap controls the tabs
     ========================================= */
-/* =========================================
-   CASE STUDY TABS
-========================================= */
 
-const tabs = document.querySelectorAll(".case-tab");
-const cards = document.querySelectorAll(".case-card");
+    const cards =
+        document.querySelectorAll(".case-card");
 
 
-function filterCaseStudies(filter, shouldScroll = false) {
+    /* =========================================
+       OPEN CASE STUDIES PAGE
+       WITH SELECTED CATEGORY
+    ========================================= */
 
-    /* Remove active from all tabs */
+    const viewAllBtn =
+        document.querySelector(".view-all-btn");
 
-    tabs.forEach(function (item) {
-        item.classList.remove("active");
-    });
+    if (viewAllBtn) {
 
+        viewAllBtn.addEventListener("click", function (event) {
 
-    /* Add active to selected tab */
+            const activeTab =
+                document.querySelector(".case-tab.active");
 
-    const activeTab = document.querySelector(
-        '.case-tab[data-filter="' + filter + '"]'
-    );
+            if (!activeTab) {
+                return;
+            }
 
-    if (activeTab) {
-        activeTab.classList.add("active");
-    }
+            const target =
+                activeTab.getAttribute("data-bs-target");
 
+            if (target) {
 
-    /* Filter cards */
+                event.preventDefault();
 
-    cards.forEach(function (card) {
+                const category =
+                    target.replace("#", "");
 
-        const category = card.getAttribute("data-category");
+                window.location.href =
+                    "case-studies.html?category=" +
+                    encodeURIComponent(category);
 
-        if (
-            filter === "all" ||
-            category === filter
-        ) {
+            }
 
-            card.style.display = "";
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-
-    /* Scroll selected tab into view */
-
-    if (shouldScroll && activeTab) {
-
-        setTimeout(function () {
-
-            activeTab.scrollIntoView({
-                behavior: "smooth",
-                inline: "center",
-                block: "center"
-            });
-
-        }, 100);
+        });
 
     }
 
-}
+
+    /* =========================================
+       READ CATEGORY FROM URL
+    ========================================= */
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const categoryFromUrl =
+        params.get("category");
 
 
-/* Normal tab click */
+    if (categoryFromUrl) {
 
-tabs.forEach(function (tab) {
-
-    tab.addEventListener("click", function () {
-
-        const filter =
-            tab.getAttribute("data-filter");
-
-        filterCaseStudies(filter, false);
-
-    });
-
-});
+        const tab =
+            document.querySelector(
+                '.case-tab[data-bs-target="#' +
+                categoryFromUrl +
+                '"]'
+            );
 
 
-/* =========================================
-   OPEN CASE STUDIES PAGE WITH SELECTED TAB
-========================================= */
+        if (tab && typeof bootstrap !== "undefined") {
 
-const viewAllBtn =
-    document.querySelector(".view-all-btn");
+            const bootstrapTab =
+                new bootstrap.Tab(tab);
 
-if (viewAllBtn) {
-
-    viewAllBtn.addEventListener("click", function (event) {
-
-        const activeTab =
-            document.querySelector(".case-tab.active");
-
-        if (!activeTab) {
-            return;
-        }
-
-        const filter =
-            activeTab.getAttribute("data-filter");
+            bootstrapTab.show();
 
 
-        if (filter && filter !== "all") {
+            setTimeout(function () {
 
-            event.preventDefault();
+                tab.scrollIntoView({
+                    behavior: "smooth",
+                    inline: "center",
+                    block: "center"
+                });
 
-            window.location.href =
-                "case-studies.html?category=" +
-                encodeURIComponent(filter);
+            }, 100);
 
         }
 
-    });
-
-}
-
-
-/* =========================================
-   READ CATEGORY FROM URL
-========================================= */
-
-const params =
-    new URLSearchParams(window.location.search);
-
-const categoryFromUrl =
-    params.get("category");
-
-
-if (categoryFromUrl) {
-
-    filterCaseStudies(categoryFromUrl, true);
-
-}
+    }
 
 
     /* =========================================
        MODAL ELEMENTS
     ========================================= */
 
-    const modal = document.getElementById("projectModal");
+    const modal =
+        document.getElementById("projectModal");
 
-    const modalClose = document.getElementById("projectModalClose");
+    const modalClose =
+        document.getElementById("projectModalClose");
 
-    const modalCategory = document.getElementById("modalCategory");
+    const modalCategory =
+        document.getElementById("modalCategory");
 
-    const modalTitle = document.getElementById("modalTitle");
+    const modalTitle =
+        document.getElementById("modalTitle");
 
-    const modalDescription = document.getElementById("modalDescription");
+    const modalDescription =
+        document.getElementById("modalDescription");
 
-    const modalMedia = document.getElementById("modalMedia");
+    const modalMedia =
+        document.getElementById("modalMedia");
 
 
     /* =========================================
        CHECK MODAL
     ========================================= */
-
-    if (!modal) {
-
-        console.error(
-            "Modal error: #projectModal was not found."
-        );
-
-        return;
-    }
+if (!modal) {
+    return;
+}
 
 
     /* =========================================
@@ -205,9 +157,13 @@ if (categoryFromUrl) {
 
     cards.forEach(function (card) {
 
-        card.addEventListener("click", function () {
+        card.addEventListener("click", function (event) {
 
-            /* Find hidden project source */
+            /*
+             * If the user clicks the actual
+             * View Case Study button, allow
+             * the card click to continue.
+             */
 
             const source =
                 card.querySelector(".project-source");
@@ -221,6 +177,7 @@ if (categoryFromUrl) {
                 );
 
                 return;
+
             }
 
 
@@ -301,8 +258,6 @@ if (categoryFromUrl) {
 
             modal.scrollTop = 0;
 
-            window.scrollTo(0, 0);
-
         });
 
     });
@@ -319,7 +274,9 @@ if (categoryFromUrl) {
         document.body.classList.remove("modal-open");
 
 
-        /* Stop videos */
+        /* =====================================
+           STOP VIDEOS
+        ===================================== */
 
         if (modalMedia) {
 
@@ -343,18 +300,36 @@ if (categoryFromUrl) {
         }
 
 
-        /* Clear content */
+        /* =====================================
+           CLEAR CATEGORY
+        ===================================== */
 
         if (modalCategory) {
+
             modalCategory.innerHTML = "";
+
         }
+
+
+        /* =====================================
+           CLEAR TITLE
+        ===================================== */
 
         if (modalTitle) {
+
             modalTitle.innerHTML = "";
+
         }
 
+
+        /* =====================================
+           CLEAR DESCRIPTION
+        ===================================== */
+
         if (modalDescription) {
+
             modalDescription.innerHTML = "";
+
         }
 
     }
@@ -385,19 +360,24 @@ if (categoryFromUrl) {
     /* =========================================
        CLICK OUTSIDE MODAL
     ========================================= */
-if (modalClose) {
-    modalClose.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        closeProjectModal();
-    });
-}
 
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modal.classList.contains("show")) {
-        closeProjectModal();
-    }
-});
+    modal.addEventListener(
+        "click",
+        function (event) {
+
+            /*
+             * Close only when clicking the
+             * modal background itself.
+             */
+
+            if (event.target === modal) {
+
+                closeProjectModal();
+
+            }
+
+        }
+    );
 
 
     /* =========================================
@@ -419,5 +399,6 @@ document.addEventListener("keydown", function (event) {
 
         }
     );
+
 
 });

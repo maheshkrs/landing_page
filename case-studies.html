@@ -17,26 +17,73 @@
 
     <body>
 
-     <nav class="navbar navbar-expand-lg site-navbar">
+<nav class="navbar navbar-expand-lg site-navbar">
     <div class="container">
 
-        <!-- Logo -->
-       <a class="navbar-brand navbar-logo" href="https://landing-page-az8r.onrender.com/">
-    <img src="../assets/images/dollorbird_whiteLogo.svg"
-         class="logo-white"
-         alt="Dollarbird">
+        <!-- LOGO -->
+        <a class="navbar-brand navbar-logo" href="#top">
 
-    <img src="../assets/images/dollarbird_colorLogo.svg"
-         class="logo-color"
-         alt="Dollarbird">
-</a>
+            <img
+                src="assets/images/dollorbird_whiteLogo.svg"
+                class="logo-white"
+                alt="Dollarbird">
 
-        <!-- Contact: Mobile only -->
-        <div class="d-lg-none ms-auto">
-            <a href="#contact" class="btn contact-btn">
-                Contact
-            </a>
+            <img
+                src="assets/images/dollarbird_colorLogo.svg"
+                class="logo-color"
+                alt="Dollarbird">
+
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+        <div class="desktop-navigation">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#overview">
+                        Overview
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#categories">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#case-studies">
+                        Case Studies
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
+
+
+        <!-- MOBILE CONTACT ONLY -->
+        <a
+            class="mobile-contact-btn"
+            href="index.html#contact">
+            Contact
+        </a>
 
     </div>
 </nav>
@@ -54,7 +101,7 @@
              <a target="_blank" href="https://www.dollarbirdinc.com/" class="btn">View Website</a>
         </div>
       </section>
-            <section class="case-hero mt-lg-5 mt-md-3">
+            <section class="case-hero mt-lg-5 mt-md-3" id="case-studies">
                 <div class="container">
 
                     <div class="case-hero-content">
@@ -75,398 +122,758 @@
                 </div>
             </section>
 
+           <!-- =========================
+     CASE STUDIES
+========================== -->
+
+<section class="case-studies-section">
+
+    <div class="container">
+
+        <!-- CATEGORY TABS -->
+        <div class="case-study-tabs" role="tablist">
+
+            <button
+                type="button"
+                class="case-tab active"
+                data-bs-toggle="tab"
+                data-bs-target="#uxui"
+                role="tab"
+                aria-controls="uxui"
+                aria-selected="true">
+                UX/UI Solutions
+            </button>
+
+            <button
+                type="button"
+                class="case-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#branding"
+                role="tab"
+                aria-controls="branding"
+                aria-selected="false">
+                Branding
+            </button>
+
+            <button
+                type="button"
+                class="case-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#advertising"
+                role="tab"
+                aria-controls="advertising"
+                aria-selected="false">
+                Digital Advertising
+            </button>
+
+            <button
+                type="button"
+                class="case-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#motion"
+                role="tab"
+                aria-controls="motion"
+                aria-selected="false">
+                Motion Design & Video Editing
+            </button>
+
+        </div>
+
+
+        <!-- TAB CONTENT -->
+        <div class="tab-content">
+
+
             <!-- =========================
-             CASE STUDIES
-        ========================== -->
-            <section class="case-studies-section">
+                 UX/UI
+            ========================== -->
 
-                <div class="container">
+            <div
+                class="tab-pane show active"
+                id="uxui"
+                role="tabpanel">
 
-                    <!-- CATEGORY TABS -->
-                    <div class="case-study-tabs">
+                <div class="case-study-grid">
 
-                        <button
-                            type="button"
-                            class="case-tab active"
-                            data-filter="all">
-                            All
-                        </button>
 
-                        <button
-                            type="button"
-                            class="case-tab"
-                            data-filter="uxui">
-                            UX/UI Solutions
-                        </button>
+                    <!-- UX/UI - CARD 01 -->
 
-                        <button
-                            type="button"
-                            class="case-tab"
-                            data-filter="branding">
-                            Branding
-                        </button>
+                    <article
+                        class="case-card"
+                        data-category="uxui">
 
-                        <button
-                            type="button"
-                            class="case-tab"
-                            data-filter="advertising">
-                            Digital Advertising
-                        </button>
+                        <div class="case-card-image">
 
-                        <button
-                            type="button"
-                            class="case-tab"
-                            data-filter="motion">
-                            Motion Design & Video Editing
-                        </button>
+                            <img
+                                src="https://picsum.photos/seed/uxui-project-01/1400/900"
+                                alt="Logistics dashboard interface">
 
-                    </div>
+                        </div>
 
-                    <!-- CASE STUDY GRID -->
-                    <div class="case-study-grid">
+                        <div class="case-card-content">
 
-                        <!-- =========================
-                         PROJECT 01
-                    ========================== -->
-                        <article
-                            class="case-card"
-                            data-category="uxui">
+                            <h2>
+                                Logistics Command Center
+                            </h2>
 
-                            <div class="case-card-image">
+                            <p>
+                                A streamlined operations dashboard designed to help
+                                teams monitor shipments, routes, and delivery activity
+                                from one interface.
+                            </p>
 
-                                <img
-                                    src="https://picsum.photos/seed/meridian-studio-1/1400/900"
-                                    alt="Freight logistics operations">
+                            <button
+                                type="button"
+                                class="case-study-open">
 
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                UX/UI Solutions
                             </div>
 
-                            <div class="case-card-content">
+                            <h2>
+                                Logistics Command Center
+                            </h2>
 
-                                <div class="case-card-top">
-
-                                    <span>
-                                        UX/UI Solutions
-                                    </span>
-
-                                </div>
-
-                                <h2>
-                                    UX/UI Solutions
-                                </h2>
+                            <div class="project-description">
 
                                 <p>
-                                    A routing engine on a single aging data
-                                    center
-                                    couldn't survive peak season without manual
-                                    intervention every few hours.
+                                    A complete UX/UI redesign focused on simplifying
+                                    complex logistics workflows and improving
+                                    operational visibility.
                                 </p>
 
-                                <button
-                                    type="button"
-                                    class="case-study-open">
-
-                                    View Case Study
-                                    <span>↗</span>
-
-                                </button>
-
                             </div>
 
-                            <!-- Hidden modal content -->
-                            <div class="project-source" hidden>
-
-                                <div class="project-category">
-                                    UX/UI Solutions
-                                </div>
-
-                               
-
-                                <div class="project-media">
-
-                                    <video
-                                        src="https://www.w3schools.com/html/mov_bbb.mp4"
-                                        controls
-                                        playsinline>
-                                    </video>
-
-                                    <img
-                                        src="https://picsum.photos/seed/uxui-01/1400/900"
-                                        alt="UX UI project image 1">
-
-                                    <img
-                                        src="https://picsum.photos/seed/uxui-02/1400/900"
-                                        alt="UX UI project image 2">
-
-                                    <img
-                                        src="https://picsum.photos/seed/uxui-03/1400/900"
-                                        alt="UX UI project image 3">
-
-                                    <img
-                                        src="https://picsum.photos/seed/uxui-04/1400/900"
-                                        alt="UX UI project image 4">
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                        <!-- =========================
-                         PROJECT 02
-                    ========================== -->
-                        <article
-                            class="case-card"
-                            data-category="branding">
-
-                            <div class="case-card-image">
+                            <div class="project-media">
 
                                 <img
-                                    src="https://picsum.photos/seed/meridian-studio-2/1400/900"
-                                    alt="Healthcare systems team at work">
-
-                            </div>
-
-                            <div class="case-card-content">
-
-                                <div class="case-card-top">
-
-                                    <span>
-                                        Branding
-                                    </span>
-
-                                </div>
-
-                                <h2>
-                                    Branding
-                                </h2>
-
-                                <p>
-                                    A 15-year-old claims system was hitting
-                                    HIPAA
-                                    audit findings every cycle.
-                                </p>
-
-                                <button
-                                    type="button"
-                                    class="case-study-open">
-
-                                    View Case Study
-                                    <span>↗</span>
-
-                                </button>
-
-                            </div>
-
-                            <!-- Hidden modal content -->
-                            <div class="project-source" hidden>
-
-                                <div class="project-category">
-                                    Branding
-                                </div>
-
-                             
-
-                                <div class="project-media">
-
-                                    <img
-                                        src="https://picsum.photos/seed/branding-01/1400/900"
-                                        alt="Branding project image 1">
-
-                                    <img
-                                        src="https://picsum.photos/seed/branding-02/1400/900"
-                                        alt="Branding project image 2">
-
-                                    <img
-                                        src="https://picsum.photos/seed/branding-03/1400/900"
-                                        alt="Branding project image 3">
-
-                                    <img
-                                        src="https://picsum.photos/seed/branding-04/1400/900"
-                                        alt="Branding project image 4">
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                        <!-- =========================
-                         PROJECT 03
-                    ========================== -->
-                        <article
-                            class="case-card"
-                            data-category="advertising">
-
-                            <div class="case-card-image">
+                                    src="https://picsum.photos/seed/uxui-project-01-a/1400/900"
+                                    alt="Logistics dashboard screen">
 
                                 <img
-                                    src="https://picsum.photos/seed/meridian-studio-3/1400/900"
-                                    alt="Retail warehouse operations">
-
-                            </div>
-
-                            <div class="case-card-content">
-
-                                <div class="case-card-top">
-
-                                    <span>
-                                        Digital Advertising
-                                    </span>
-
-                                </div>
-
-                                <h2>
-                                    Digital Advertising
-                                </h2>
-
-                                <p>
-                                    Inventory counts drifted from what was on
-                                    shelves,
-                                    causing overselling during every major sale.
-                                </p>
-
-                                <button
-                                    type="button"
-                                    class="case-study-open">
-
-                                    View Case Study
-                                    <span>↗</span>
-
-                                </button>
-
-                            </div>
-
-                            <!-- Hidden modal content -->
-                            <div class="project-source" hidden>
-
-                                <div class="project-category">
-                                    Digital Advertising
-                                </div>
-
-                            
-
-                                <div class="project-media">
-
-                                    <img
-                                        src="https://picsum.photos/seed/advertising-01/1400/900"
-                                        alt="Digital advertising project image 1">
-
-                                    <img
-                                        src="https://picsum.photos/seed/advertising-02/1400/900"
-                                        alt="Digital advertising project image 2">
-
-                                    <img
-                                        src="https://picsum.photos/seed/advertising-03/1400/900"
-                                        alt="Digital advertising project image 3">
-
-                                    <img
-                                        src="https://picsum.photos/seed/advertising-04/1400/900"
-                                        alt="Digital advertising project image 4">
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                        <!-- =========================
-                         PROJECT 04
-                    ========================== -->
-                        <article
-                            class="case-card"
-                            data-category="motion">
-
-                            <div class="case-card-image">
+                                    src="https://picsum.photos/seed/uxui-project-01-b/1400/900"
+                                    alt="Logistics analytics screen">
 
                                 <img
-                                    src="https://picsum.photos/seed/meridian-studio-4/1400/900"
-                                    alt="Motion design and video editing">
+                                    src="https://picsum.photos/seed/uxui-project-01-c/1400/900"
+                                    alt="Logistics mobile interface">
 
                             </div>
 
-                            <div class="case-card-content">
+                        </div>
 
-                                <div class="case-card-top">
+                    </article>
 
-                                    <span>
-                                        Motion Design & Video Editing
-                                    </span>
 
-                                </div>
+                    <!-- UX/UI - CARD 02 -->
 
-                                <h2>
-                                    Motion Design & Video Editing
-                                </h2>
+                    <article
+                        class="case-card"
+                        data-category="uxui">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/uxui-project-02/1400/900"
+                                alt="Healthcare application interface">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Patient Care Platform
+                            </h2>
+
+                            <p>
+                                A cleaner healthcare experience connecting patient
+                                information, appointments, and care workflows through
+                                an intuitive interface.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                UX/UI Solutions
+                            </div>
+
+                            <h2>
+                                Patient Care Platform
+                            </h2>
+
+                            <div class="project-description">
 
                                 <p>
-                                    Motion design and video content created to
-                                    communicate complex ideas clearly and
-                                    effectively.
+                                    A user-focused healthcare platform designed around
+                                    accessibility, clear navigation, and simplified
+                                    patient workflows.
                                 </p>
 
-                                <button
-                                    type="button"
-                                    class="case-study-open">
+                            </div>
 
-                                    View Case Study
-                                    <span>↗</span>
+                            <div class="project-media">
 
-                                </button>
+                                <img
+                                    src="https://picsum.photos/seed/uxui-project-02-a/1400/900"
+                                    alt="Patient dashboard">
+
+                                <img
+                                    src="https://picsum.photos/seed/uxui-project-02-b/1400/900"
+                                    alt="Appointment interface">
+
+                                <img
+                                    src="https://picsum.photos/seed/uxui-project-02-c/1400/900"
+                                    alt="Healthcare mobile interface">
 
                             </div>
 
-                            <!-- Hidden modal content -->
-                            <div class="project-source" hidden>
+                        </div>
 
-                                <div class="project-category">
-                                    Motion Design & Video Editing
-                                </div>
-
-                                <h2>
-                                    Motion Design & Video Editing
-                                </h2>
-
-                                <div class="project-description">
-
-                                    <p>
-                                        Motion design and video editing work
-                                        focused
-                                        on presenting ideas through clear visual
-                                        storytelling, structured animation, and
-                                        engaging video content.
-                                    </p>
-
-                                </div>
-
-                                <div class="project-media">
-
-                                    <img
-                                        src="https://picsum.photos/seed/motion-01/1400/900"
-                                        alt="Motion design project image 1">
-
-                                    <img
-                                        src="https://picsum.photos/seed/motion-02/1400/900"
-                                        alt="Motion design project image 2">
-
-                                    <img
-                                        src="https://picsum.photos/seed/motion-03/1400/900"
-                                        alt="Motion design project image 3">
-
-                                    <img
-                                        src="https://picsum.photos/seed/motion-04/1400/900"
-                                        alt="Motion design project image 4">
-
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
+                    </article>
 
                 </div>
 
-            </section>
+            </div>
+
+
+            <!-- =========================
+                 BRANDING
+            ========================== -->
+
+            <div
+                class="tab-pane "
+                id="branding"
+                role="tabpanel">
+
+                <div class="case-study-grid">
+
+
+                    <!-- BRANDING - CARD 01 -->
+
+                    <article
+                        class="case-card"
+                        data-category="branding">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/branding-project-01/1400/900"
+                                alt="Technology brand identity">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Nova Technology Identity
+                            </h2>
+
+                            <p>
+                                A complete visual identity created to give a growing
+                                technology company a consistent and recognizable
+                                presence.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Branding
+                            </div>
+
+                            <h2>
+                                Nova Technology Identity
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    Brand strategy, visual direction, typography, and
+                                    supporting digital assets developed for a modern
+                                    technology business.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-01-a/1400/900"
+                                    alt="Technology brand logo">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-01-b/1400/900"
+                                    alt="Technology brand stationery">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-01-c/1400/900"
+                                    alt="Technology brand guidelines">
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- BRANDING - CARD 02 -->
+
+                    <article
+                        class="case-card"
+                        data-category="branding">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/branding-project-02/1400/900"
+                                alt="Lifestyle brand identity">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Urban Living Brand
+                            </h2>
+
+                            <p>
+                                A refined identity system developed for a lifestyle
+                                brand with a focus on clarity, consistency, and visual
+                                character.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Branding
+                            </div>
+
+                            <h2>
+                                Urban Living Brand
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    A complete branding system covering visual language,
+                                    typography, layouts, and digital applications.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-02-a/1400/900"
+                                    alt="Lifestyle brand identity">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-02-b/1400/900"
+                                    alt="Lifestyle brand packaging">
+
+                                <img
+                                    src="https://picsum.photos/seed/branding-project-02-c/1400/900"
+                                    alt="Lifestyle brand digital assets">
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 DIGITAL ADVERTISING
+            ========================== -->
+
+            <div
+                class="tab-pane "
+                id="advertising"
+                role="tabpanel">
+
+                <div class="case-study-grid">
+
+
+                    <!-- ADVERTISING - CARD 01 -->
+
+                    <article
+                        class="case-card"
+                        data-category="advertising">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/advertising-project-01/1400/900"
+                                alt="Digital campaign creative">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Summer Launch Campaign
+                            </h2>
+
+                            <p>
+                                A multi-format digital campaign created to introduce a
+                                new product across social and display advertising
+                                channels.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Digital Advertising
+                            </div>
+
+                            <h2>
+                                Summer Launch Campaign
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    Campaign creative designed for multiple digital
+                                    placements with a consistent visual direction.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-01-a/1400/900"
+                                    alt="Campaign banner">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-01-b/1400/900"
+                                    alt="Social media campaign">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-01-c/1400/900"
+                                    alt="Digital advertisement">
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ADVERTISING - CARD 02 -->
+
+                    <article
+                        class="case-card"
+                        data-category="advertising">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/advertising-project-02/1400/900"
+                                alt="Product advertising campaign">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Product Growth Campaign
+                            </h2>
+
+                            <p>
+                                Performance-focused creative built around product
+                                awareness, engagement, and conversion across digital
+                                channels.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Digital Advertising
+                            </div>
+
+                            <h2>
+                                Product Growth Campaign
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    A digital advertising system developed with
+                                    campaign-specific creatives for multiple audience
+                                    segments.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-02-a/1400/900"
+                                    alt="Advertising campaign creative">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-02-b/1400/900"
+                                    alt="Advertising social creative">
+
+                                <img
+                                    src="https://picsum.photos/seed/advertising-project-02-c/1400/900"
+                                    alt="Advertising display creative">
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MOTION DESIGN & VIDEO EDITING
+            ========================== -->
+
+            <div
+                class="tab-pane "
+                id="motion"
+                role="tabpanel">
+
+                <div class="case-study-grid">
+
+
+                    <!-- MOTION - CARD 01 -->
+
+                    <article
+                        class="case-card"
+                        data-category="motion">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/motion-project-01/1400/900"
+                                alt="Motion graphics project">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Product Story Animation
+                            </h2>
+
+                            <p>
+                                Animated visual storytelling created to explain a
+                                complex product through simple motion and engaging
+                                visual sequences.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Motion Design & Video Editing
+                            </div>
+
+                            <h2>
+                                Product Story Animation
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    Motion graphics and video editing developed to turn
+                                    product information into a clear visual story.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+   <div class="case-card-image">
+    <img
+                                    src="https://picsum.photos/seed/motion-project-01-a/1400/900"
+                                    alt="Motion graphics frame">
+   </div>
+                                
+   <div class="case-card-image"> <img
+                                    src="https://picsum.photos/seed/motion-project-01-b/1400/900"
+                                    alt="Animation sequence"></div>
+                               
+   <div class="case-card-image"> <img
+                                    src="https://picsum.photos/seed/motion-project-01-c/1400/900"
+                                    alt="Video editing frame"></div>
+                               
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MOTION - CARD 02 -->
+
+                    <article
+                        class="case-card"
+                        data-category="motion">
+
+                        <div class="case-card-image">
+
+                            <img
+                                src="https://picsum.photos/seed/motion-project-02/1400/900"
+                                alt="Video editing project">
+
+                        </div>
+
+                        <div class="case-card-content">
+
+                            <h2>
+                                Brand Film & Visual Stories
+                            </h2>
+
+                            <p>
+                                Short-form video and motion content created to bring
+                                brand stories to life across digital platforms.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="case-study-open">
+
+                                View Case Study
+                                <span>↗</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="project-source" hidden>
+
+                            <div class="project-category">
+                                Motion Design & Video Editing
+                            </div>
+
+                            <h2>
+                                Brand Film & Visual Stories
+                            </h2>
+
+                            <div class="project-description">
+
+                                <p>
+                                    A collection of branded motion pieces combining
+                                    editing, animation, transitions, and visual
+                                    storytelling.
+                                </p>
+
+                            </div>
+
+                            <div class="project-media">
+   <div class="case-card-image"><img
+                                    src="https://picsum.photos/seed/motion-project-02-a/1400/900"
+                                    alt="Brand film frame"></div>
+                                
+   <div class="case-card-image"><img
+                                    src="https://picsum.photos/seed/motion-project-02-b/1400/900"
+                                    alt="Motion design frame"></div>
+                                
+   <div class="case-card-image"><img
+                                    src="https://picsum.photos/seed/motion-project-02-c/1400/900"
+                                    alt="Video editing frame"></div>
+                                
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
         </main>
 
@@ -514,7 +921,7 @@
             </div>
 
         </div>
-
+<script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/script.js"></script>
     </body>
 

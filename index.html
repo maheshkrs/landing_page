@@ -18,24 +18,70 @@
 <nav class="navbar navbar-expand-lg site-navbar">
     <div class="container">
 
-        <!-- Logo -->
-       <a class="navbar-brand navbar-logo" href="#">
-    <img src="../assets/images/dollorbird_whiteLogo.svg"
-         class="logo-white"
-         alt="Dollarbird">
+        <!-- LOGO -->
+        <a class="navbar-brand navbar-logo" href="#top">
 
-         
-    <img src="../assets/images/dollarbird_colorLogo.svg"
-         class="logo-color"
-         alt="Dollarbird">
-</a>
+            <img
+                src="assets/images/dollorbird_whiteLogo.svg"
+                class="logo-white"
+                alt="Dollarbird">
 
-        <!-- Contact: Mobile only -->
-        <div class="d-lg-none ms-auto">
-            <a href="#contact" class="btn contact-btn">
-                Contact
-            </a>
+            <img
+                src="assets/images/dollarbird_colorLogo.svg"
+                class="logo-color"
+                alt="Dollarbird">
+
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+        <div class="desktop-navigation">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#overview">
+                        Overview
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#categories">
+                        Categories
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="case-studies.html#case-studies">
+                        Case Studies
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
+
+
+        <!-- MOBILE CONTACT -->
+        <a
+            href="#contact"
+            class="mobile-contact-btn">
+            Contact
+        </a>
 
     </div>
 </nav>
@@ -75,407 +121,201 @@
                </div>
            
       </section>
+<div class="wrap">
 
-      <div class="wrap">
-        <div class="intro-strip pt-3" >
-          <div><div class="v">48</div><div class="l">Projects Completed</div></div>
-          <div><div class="v">06</div><div class="l">Active Projects</div></div>
-          <!-- <div><div class="v">92%</div><div class="l">On Track Projects</div></div> -->
-          <div><div class="v">6.5wks</div><div class="l">Avg. Delivery Time</div></div>
+    <!-- STATS -->
+    <div class="intro-strip pt-3">
+
+        <div>
+            <div class="v">48</div>
+            <div class="l">Projects Completed</div>
         </div>
 
-  
-    <!-- =========================================
-         CATEGORY TABS
-    ========================================== -->
+        <div>
+            <div class="v">06</div>
+            <div class="l">Active Projects</div>
+        </div>
 
-    <div class="case-study-nav">
-
-        <div class="case-study-tabs" id="caseStudyTabs">
-
-            <button
-                type="button"
-                class="case-tab active"
-                data-filter="all">
-                All
-            </button>
-
-            <button
-                type="button"
-                class="case-tab"
-                data-filter="uxui">
-                UX/UI Solutions
-            </button>
-
-            <button
-                type="button"
-                class="case-tab"
-                data-filter="branding">
-                Branding
-            </button>
-
-            <button
-                type="button"
-                class="case-tab"
-                data-filter="advertising">
-                Digital Advertising
-            </button>
-
-            <button
-                type="button"
-                class="case-tab"
-                data-filter="motion">
-                Motion Design &amp; Video Editing
-            </button>
-
+        <div>
+            <div class="v">6.5wks</div>
+            <div class="l">Avg. Delivery Time</div>
         </div>
 
     </div>
 
 
-    <!-- =========================================
-         CASE STUDY GRID
-    ========================================== -->
+    <!-- CATEGORIES -->
+    <div class="panel-head mb-4" id="categories">
+        <div class="client">Categories</div>
+    </div>
 
-    <div class="case-study-grid">
+
+    <!-- CASE STUDY CARDS -->
+    <div class="row g-4">
+
+        <!-- CARD 01 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+
+            <div class="case-card h-100 d-flex flex-column">
+
+                <div class="case-card-image">
+                    <img
+                        src="https://picsum.photos/seed/meridian-studio-1/1400/900"
+                        alt="UX/UI Solutions">
+                </div>
+
+                <div class="case-card-content d-flex flex-column">
 
 
-        <!-- =====================================
-             CARD 01 - UX/UI
-        ====================================== -->
+                    <h3>UX/UI Solutions</h3>
 
-        <article
-            class="case-card"
-            data-category="uxui"
-            data-project="work-01">
+                    <p>
+                        A routing engine on a single aging data center couldn't
+                        survive peak season without manual intervention every
+                        few hours.
+                    </p>
 
-            <div class="case-card-image">
+                    <a href="case-studies.html?category=uxui"
+                       class="view-all-btn">
+                        View All
+                    </a>
 
-                <img
-                    src="https://picsum.photos/seed/meridian-studio-1/1400/900"
-                    alt="Freight logistics operations">
+                </div>
 
             </div>
 
+        </div>
 
-            <div class="case-card-content">
 
-                <div class="case-card-top">
+        <!-- CARD 02 -->
+        <div class="col-12 col-sm-6 col-lg-3">
 
-                    <span>UX/UI Solutions</span>
+            <div class="case-card h-100 d-flex flex-column">
+
+                <div class="case-card-image">
+                    <img
+                        src="https://picsum.photos/seed/meridian-studio-2/1400/900"
+                        alt="Branding">
+                </div>
+
+                <div class="case-card-content d-flex flex-column">
 
                   
 
-                </div>
+                    <h3>Branding</h3>
 
+                     <p>
+                        A routing engine on a single aging data center couldn't
+                        survive peak season without manual intervention every
+                        few hours.
+                    </p>
 
-                <h3>
-                    UX/UI Solutions
-                </h3>
-
-
-                <p>
-                    A routing engine on a single aging data center couldn't
-                    survive peak season without manual intervention every few
-                    hours.
-                </p>
-
-            </div>
-
-
-            <!-- =================================
-                 HIDDEN MODAL SOURCE
-            ================================== -->
-
-            <div class="project-source">
-
-                <div class="project-category">
-                    UX/UI Solutions
-                </div>
-
-
-
-
-                <div class="project-media">
-
-    <div class="project-media-item">
-                    <video
-                        src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        controls
-                        playsinline>
-                    </video>
-</div>
-
-    <div class="project-media-item">
-                    <img
-                        src="https://picsum.photos/seed/uxui-01/1400/900"
-                        alt="UX UI project image 1">
-
-</div>
-
-    <div class="project-media-item">
-                    <img
-                        src="https://picsum.photos/seed/uxui-02/1400/900"
-                        alt="UX UI project image 2">
-
-    </div>
-
-    <div class="project-media-item">
-                    <img
-                        src="https://picsum.photos/seed/uxui-03/1400/900"
-                        alt="UX UI project image 3">
-    </div>
-    
-    <div class="project-media-item">
-
-                    <img
-                        src="https://picsum.photos/seed/uxui-04/1400/900"
-                        alt="UX UI project image 4">
-    </div>
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================================
-             CARD 02 - BRANDING
-        ====================================== -->
-
-        <article
-            class="case-card"
-            data-category="branding"
-            data-project="work-02">
-
-            <div class="case-card-image">
-
-                <img
-                    src="https://picsum.photos/seed/meridian-studio-2/1400/900"
-                    alt="Healthcare systems team at work">
-
-            </div>
-
-
-            <div class="case-card-content">
-
-                <div class="case-card-top">
-
-                    <span>Branding</span>
-
-             
-
-                </div>
-
-
-                <h3>
-                    Branding
-                </h3>
-
-
-                <p>
-                    A 15-year-old claims system was hitting HIPAA audit
-                    findings every cycle.
-                </p>
-
-            </div>
-
-
-            <!-- =================================
-                 HIDDEN MODAL SOURCE
-            ================================== -->
-
-            <div class="project-source">
-
-                <div class="project-category">
-                    Branding
-                </div>
-
-
-
-
-                <div class="project-media">
-
-                    <img
-                        src="https://picsum.photos/seed/branding-01/1400/900"
-                        alt="Branding project image 1">
-
-
-                    <img
-                        src="https://picsum.photos/seed/branding-02/1400/900"
-                        alt="Branding project image 2">
-
-
-                    <img
-                        src="https://picsum.photos/seed/branding-03/1400/900"
-                        alt="Branding project image 3">
-
-
-                    <img
-                        src="https://picsum.photos/seed/branding-04/1400/900"
-                        alt="Branding project image 4">
+                    <a href="case-studies.html?category=branding"
+                       class="view-all-btn">
+                        View All
+                    </a>
 
                 </div>
 
             </div>
 
-        </article>
+        </div>
 
 
-        <!-- =====================================
-             CARD 03 - DIGITAL ADVERTISING
-        ====================================== -->
+        <!-- CARD 03 -->
+        <div class="col-12 col-sm-6 col-lg-3">
 
-        <article
-            class="case-card"
-            data-category="advertising"
-            data-project="work-03">
+            <div class="case-card h-100 d-flex flex-column">
 
-            <div class="case-card-image">
-
-                <img
-                    src="https://picsum.photos/seed/meridian-studio-3/1400/900"
-                    alt="Retail warehouse operations">
-
-            </div>
-
-
-            <div class="case-card-content">
-
-                <div class="case-card-top">
-
-                    <span>Digital Advertising</span>
-
-               
-
+                <div class="case-card-image">
+                    <img
+                        src="https://picsum.photos/seed/meridian-studio-3/1400/900"
+                        alt="Digital Advertising">
                 </div>
 
-
-                <h3>
-                    Digital Advertising
-                </h3>
+                <div class="case-card-content d-flex flex-column">
 
 
-                <p>
-                    Inventory counts drifted from what was on shelves,
-                    causing overselling during every major sale.
-                </p>
+                    <h3>Digital Advertising</h3>
 
-            </div>
+                    <p>
+                        A routing engine on a single aging data center couldn't
+                        survive peak season without manual intervention every
+                        few hours.
+                    </p>
 
-
-            <!-- =================================
-                 HIDDEN MODAL SOURCE
-            ================================== -->
-
-            <div class="project-source">
-
-                <div class="project-category">
-                    Digital Advertising
-                </div>
-
-
-              
-
-
-                <div class="project-media">
-
-                    <img
-                        src="https://picsum.photos/seed/advertising-01/1400/900"
-                        alt="Digital advertising project image 1">
-
-
-                    <img
-                        src="https://picsum.photos/seed/advertising-02/1400/900"
-                        alt="Digital advertising project image 2">
-
-
-                    <img
-                        src="https://picsum.photos/seed/advertising-03/1400/900"
-                        alt="Digital advertising project image 3">
-
-
-                    <img
-                        src="https://picsum.photos/seed/advertising-04/1400/900"
-                        alt="Digital advertising project image 4">
+                    <a href="case-studies.html?category=advertising"
+                       class="view-all-btn">
+                        View All
+                    </a>
 
                 </div>
 
             </div>
 
-        </article>
-
-    </div>
+        </div>
 
 
-    <!-- =========================================
-         VIEW ALL
-    ========================================== -->
+        <!-- CARD 04 -->
+        <div class="col-12 col-sm-6 col-lg-3">
 
-    <div class="view-all-wrap">
+            <div class="case-card h-100 d-flex flex-column">
 
-        <a
-            href="case-studies.html"
-            class="view-all-btn">
-            View All
-            
-        </a>
+                <div class="case-card-image">
+                    <img
+                        src="https://picsum.photos/seed/meridian-studio-4/1400/900"
+                        alt="Motion Design &amp; Video Editing">
+                </div>
 
-    </div>
+                <div class="case-card-content d-flex flex-column">
 
+                  
 
+                    <h3>Motion Design &amp; Video Editing</h3>
 
+                     <p>
+                        A routing engine on a single aging data center couldn't
+                        survive peak season without manual intervention every
+                        few hours.
+                    </p>
 
-   <!-- =========================
-     PROJECT MODAL
-========================== -->
-<div class="project-modal" id="projectModal" aria-hidden="true">
+                    <a href="case-studies.html?category=motion"
+                       class="view-all-btn">
+                        View All
+                    </a>
 
-    <div class="project-modal-dialog">
+                </div>
 
-        <!-- STICKY CLOSE BUTTON -->
-        <button
-            type="button"
-            class="project-modal-close"
-            id="projectModalClose"
-            aria-label="Close">
-
-            &times;
-
-        </button>
-
-        <div class="project-modal-body">
-
-            <div
-                class="project-modal-category"
-                id="modalCategory">
-            </div>
-
-            <h2 id="modalTitle"></h2>
-
-            <div
-                class="project-modal-description"
-                id="modalDescription">
-            </div>
-
-            <div
-                class="project-modal-media"
-                id="modalMedia">
             </div>
 
         </div>
 
     </div>
 
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+
+        <h2>
+            Tell us what's breaking under load
+        </h2>
+
+        <p>
+            A 30-minute call is usually enough to tell you whether
+            this is a rebuild, a migration, or something smaller
+            than you think.
+        </p>
+
+        <a
+            target="_blank"
+            href="https://www.dollarbirdinc.com//contact/"
+            class="btn">
+            Get in Touch
+        </a>
+
+    </section>
+
 </div>
-
-
-        <section class="cta" id="contact">
-          <h2>Tell us what's breaking under load</h2>
-          <p>A 30-minute call is usually enough to tell you whether this is a rebuild, a migration, or something smaller than you think.</p>
-          <a target="_blank" href="https://www.dollarbirdinc.com//contact/" class="btn">Get in Touch</a>
-        </section>
-      </div>
 
       <footer>
         <span class="copy">© 2026 Dollarbirdinc</span>
@@ -491,44 +331,6 @@
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/script.js"></script>
-<!-- PROJECT MODAL -->
 
-<div class="project-modal" id="projectModal">
-
-    <div class="project-modal-dialog">
-
-        <button
-            type="button"
-            class="project-modal-close"
-            id="projectModalClose"
-            aria-label="Close">
-            &times;
-        </button>
-
-
-        <div class="project-modal-body">
-
-            <div
-                class="project-modal-category"
-                id="modalCategory">
-            </div>
-
-            <h2 id="modalTitle"></h2>
-
-            <div
-                class="project-modal-description"
-                id="modalDescription">
-            </div>
-
-            <div
-                class="project-modal-media"
-                id="modalMedia">
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 </body>
 </html>
